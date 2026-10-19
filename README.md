@@ -9,7 +9,7 @@
 > 2. Open a terminal in the folder and run: `pip install -r requirements.txt` then `python extract_invoices.py`
 > 3. Open `output/invoices.xlsx` — your rows are ready.
 >
-> **Business benefit:** stop retyping invoices into Sheets. The 3-invoice sample batch runs in **under a minute**. Client work from **$80**.
+> **Business benefit:** stop retyping invoices into Sheets. The 3-invoice sample batch runs in **under a minute**. Client work from **$109**.
 
 ![Demo](docs/demo.gif)
 
@@ -41,7 +41,7 @@ python extract_invoices.py
 | | |
 |---|---|
 | **Product** | Batch invoice / PDF → Excel tailored to your layout |
-| **From** | **$80** |
+| **From** | **$109** |
 | **Includes** | Script + sample run + 1 revision |
 
 Scanned (image) PDFs can use OCR in a client build — this public demo uses digital PDFs (no paid API).
@@ -53,7 +53,7 @@ Scanned (image) PDFs can use OCR in a client build — this public demo uses dig
 1. Open an **issue** with: goal · deadline · budget  
 2. Or message **[LaborX — Nyyo Automation](https://laborx.com/freelancers/users/id475124)**
 
-Crypto: USDC / SOL / ETH / BTC.
+Crypto: USDC on BNB Chain or Base.
 
 ## Limits (honest)
 
