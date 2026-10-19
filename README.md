@@ -9,7 +9,7 @@
 > 2. Open a terminal in the folder and run: `pip install -r requirements.txt` then `python extract_invoices.py`
 > 3. Open `output/invoices.xlsx` — your rows are ready.
 >
-> **Business benefit:** stop retyping invoices into Sheets. A batch that takes finance 30–60 minutes becomes **under a minute**. Client work from **$80**.
+> **Business benefit:** stop retyping invoices into Sheets. The 3-invoice sample batch runs in **under a minute**. Client work from **$80**.
 
 ![Demo](docs/demo.gif)
 

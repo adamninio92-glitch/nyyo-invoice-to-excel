@@ -1,4 +1,4 @@
 file,vendor,invoice_no,date,due,currency,subtotal,vat,total
-invoice_ACME_2026-001.pdf,ACME Supplies SARL,INV-2026-001,2026-09-12,2026-10-12,EUR,521.00,104.20,625.20
+invoice_ACME_2026-001.pdf,ACME Supplies GmbH,INV-2026-001,2026-09-12,2026-10-12,EUR,521.00,104.20,625.20
 invoice_BrightPrint_88.pdf,BrightPrint Ltd,BP-88,2026-08-22,2026-09-22,GBP,270.00,0.00,270.00
 invoice_NordSoft_4421.pdf,NordSoft Oy,NS-4421,2026-10-01,2026-10-31,EUR,515.00,123.60,638.60
