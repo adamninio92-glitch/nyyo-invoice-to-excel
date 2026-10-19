@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invoice PDF → Excel — Nyyo Automation live demo</title>
+  <meta name="description" content="Try sample invoice extraction: PDF invoices become clean Excel/CSV rows. Fixed price from $80. Nyyo Automation." />
+  <meta name="theme-color" content="#050814" />
+  <meta property="og:title" content="Invoice PDF → Excel — Nyyo Automation" />
+  <meta property="og:description" content="Sample invoices → structured rows in seconds. From $80 fixed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://nyyoautomation.github.io/nyyo-invoice-to-excel/assets/logo.png" />
+  <link rel="icon" href="./assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body>
+<!-- NYYO_PREMIUM_V1 -->
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="https://github.com/nyyoautomation">
+        <img src="./assets/logo.png" alt="" width="34" height="34" />
+        <span>Nyyo Automation</span>
+      </a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-ghost" href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a>
+        <a class="btn btn-primary icon-btn" href="https://laborx.com/freelancers/users/id475124" rel="noopener"><i data-lucide="briefcase"></i> Hire me</a>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <span class="tag"><span class="dot"></span> Live sample · no signup · example data</span>
+        <h1>PDF invoices → <span class="grad">clean Excel rows</span></h1>
+        <p class="lead">Stop retyping vendor, totals and dates. Run the sample batch below — same pattern as Docparser/Nanonets, sized for freelancers.</p>
+        <div class="meta">
+          <span><strong>From $80</strong> fixed</span>
+          <span><strong>3 samples</strong> included</span>
+          <span><strong>Crypto OK</strong></span>
+          <span><strong>Remote · Worldwide</strong></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="steps" aria-label="How it works">
+      <div class="step"><span class="n">1</span><h3>Load sample</h3><p>Three fictional PDFs already extracted (labeled example).</p></div>
+      <div class="step"><span class="n">2</span><h3>Review rows</h3><p>Vendor, invoice #, dates, VAT, totals — structured.</p></div>
+      <div class="step"><span class="n">3</span><h3>Export</h3><p>Download CSV or grab the Excel from the repo.</p></div>
+    </section>
+
+    <section class="explainer">
+      <h2>What is this? (plain English)</h2>
+      <p style="margin:0 0 8px;color:var(--muted)">A small Python job that reads invoice PDFs and writes one spreadsheet finance can trust. Client builds wire email folders or Drive drops.</p>
+      <div class="benefit"><strong>Business benefit (example):</strong> a 30–60 min retyping batch becomes under a minute. From <strong>$80</strong>.</div>
+    </section>
+
+    <div class="ba-grid">
+      <div class="ba-card before">
+        <span class="example-label">Before · example</span>
+        <h3><i data-lucide="file-text" style="width:16px;height:16px;vertical-align:-2px"></i> Messy PDFs</h3>
+        <ul style="margin:0;padding-left:1.1rem;color:var(--muted);font-size:.88rem">
+          <li>invoice_ACME_2026-001.pdf</li>
+          <li>invoice_BrightPrint_88.pdf</li>
+          <li>invoice_NordSoft_4421.pdf</li>
+        </ul>
+        <p style="margin:10px 0 0;font-size:.8rem;color:var(--muted)">Different layouts, currencies, VAT lines.</p>
+      </div>
+      <div class="ba-card after">
+        <span class="example-label">After · example</span>
+        <h3><i data-lucide="table" style="width:16px;height:16px;vertical-align:-2px"></i> Structured table</h3>
+        <p style="margin:0;color:var(--muted);font-size:.88rem">One row per invoice · Summary by currency · ready for Sheets/ERP.</p>
+      </div>
+    </div>
+
+    <div class="panel fade-in">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <h3 style="margin:0">Extracted sample (example data)</h3>
+        <div>
+          <button type="button" class="btn btn-primary icon-btn" id="run"><i data-lucide="play"></i> Run extraction</button>
+          <a class="btn btn-ghost icon-btn" id="dl" href="./output/invoices.csv" download><i data-lucide="download"></i> CSV</a>
+        </div>
+      </div>
+      <div id="loading" class="loading-state" hidden><div class="spinner"></div>Reading sample PDFs…</div>
+      <div id="empty" class="empty-state">Click <strong>Run extraction</strong> to load the example rows.</div>
+      <div id="result" hidden>
+        <table>
+          <thead>
+            <tr><th>Vendor</th><th>Invoice #</th><th>Date</th><th>Currency</th><th class="num">Subtotal</th><th class="num">VAT</th><th class="num">Total</th></tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <p style="margin:0;color:var(--muted);font-size:.8rem">Source files are fictional demos in <code>samples/</code>. GIF walkthrough: <a href="./docs/demo.gif">docs/demo.gif</a></p>
+      </div>
+    </div>
+
+    <section class="metrics">
+      <div class="metric"><div class="v">$80</div><div class="l"><strong>From</strong> · fixed build</div></div>
+      <div class="metric"><div class="v">&lt;1m</div><div class="l"><strong>Example</strong> · batch runtime</div></div>
+      <div class="metric"><div class="v">XLSX</div><div class="l"><strong>Output</strong> · + CSV</div></div>
+    </section>
+    <p class="metrics-note">Example figures for illustration — not a client case study.</p>
+    <div class="badges"><span>Python</span><span>pdfplumber / OCR-ready</span><span>openpyxl</span><span>pandas</span></div>
+
+    <section class="cta-band">
+      <div>
+        <h2>Want this on your invoice folder?</h2>
+        <p>From <strong>$80</strong> · fixed scope · crypto welcome · Remote · Worldwide</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124">Hire me on LaborX</a>
+        <a class="btn btn-ghost" href="https://github.com/nyyoautomation/nyyo-invoice-to-excel">Repo</a>
+      </div>
+    </section>
+    <p class="footer"><a href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a> · <a href="https://laborx.com/freelancers/users/id475124">LaborX</a></p>
+  </div>
+  <div class="mobile-cta"><a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124">Hire me on LaborX</a></div>
+  <script>
+    const ROWS = [
+      {vendor:"ACME Supplies SARL", no:"INV-2026-001", date:"2026-09-12", cur:"EUR", sub:521, vat:104.2, tot:625.2},
+      {vendor:"BrightPrint Ltd", no:"BP-88", date:"2026-08-22", cur:"GBP", sub:270, vat:0, tot:270},
+      {vendor:"NordSoft Oy", no:"NS-4421", date:"2026-10-01", cur:"EUR", sub:515, vat:123.6, tot:638.6},
+    ];
+    function money(n){ return n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}); }
+    document.getElementById("run").onclick = function(){
+      const load = document.getElementById("loading");
+      const empty = document.getElementById("empty");
+      const result = document.getElementById("result");
+      empty.hidden = true; result.hidden = true; load.hidden = false;
+      setTimeout(function(){
+        document.getElementById("tbody").innerHTML = ROWS.map(r =>
+          `<tr><td>${r.vendor}</td><td class="mono">${r.no}</td><td>${r.date}</td><td>${r.cur}</td><td class="num">${money(r.sub)}</td><td class="num">${money(r.vat)}</td><td class="num"><strong>${money(r.tot)}</strong></td></tr>`
+        ).join("");
+        load.hidden = true; result.hidden = false; result.classList.add("fade-in");
+      }, 650);
+    };
+    document.addEventListener("DOMContentLoaded", () => { if (window.lucide) lucide.createIcons(); });
+  </script>
+</body>
+</html>
