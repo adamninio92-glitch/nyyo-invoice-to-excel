@@ -59,11 +59,3 @@ Crypto: USDC / SOL / ETH / BTC.
 
 - Sample PDFs are **fictional**. Layouts in the wild vary — production extractors are tuned per vendor template.
 - Image-only scans need OCR (available on request).
-
-<details>
-<summary>🇫🇷 Français</summary>
-
-**Factures PDF → lignes Excel.** Téléchargez le dépôt, lancez `python extract_invoices.py`, ouvrez `output/invoices.xlsx`.  
-Bénéfice : la saisie comptable passe de des dizaines de minutes à moins d’une minute. Prestation à partir de **80 $**.
-
-</details>
